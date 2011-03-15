@@ -4,14 +4,10 @@ Rectangle {
     width: 360
     height: 360 
 
-    Text {
-        text: "Hello World"
-        anchors.centerIn: parent
-    }
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            Qt.quit();
-        }
+    color: "black"
+
+    ToDoItem {
+
+        text: "boss"
     }
 }
