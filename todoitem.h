@@ -3,24 +3,17 @@
 
 #include <QDeclarativeItem>
 
-class ToDoItem : public QDeclarativeItem
+class ToDoItem
 {
-    Q_OBJECT
-    Q_PROPERTY(QString text READ text WRITE setText)
-
 public:
-    ToDoItem(QDeclarativeItem *parent = 0);
+    ToDoItem();
+    ToDoItem(QString text);
 
     QString text() const;
     void setText(QString newText);
 
 private:
      QString m_text;
-
-signals:
-
-public slots:
-
 };
 
 #endif // TODOITEM_H

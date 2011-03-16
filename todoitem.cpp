@@ -1,10 +1,11 @@
 #include "todoitem.h"
 
-ToDoItem::ToDoItem(QDeclarativeItem *parent) :
-    QDeclarativeItem(parent)
-{
+ToDoItem::ToDoItem() {
 }
 
+ToDoItem::ToDoItem(QString text) {
+    setText(text);
+}
 
 QString ToDoItem::text() const {
 
