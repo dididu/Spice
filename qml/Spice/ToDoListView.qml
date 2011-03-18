@@ -16,26 +16,20 @@ ListView {
             radius: 4
             color: "white"
 
-            Row {
+            Text {
+                id: itemText
+                x: parent.x + 10
+                anchors.verticalCenter: parent.verticalCenter
+                text: itemtext
+            }
 
-                x: parent.x + 5
-                width: parent.width - 10
+            Text {
+                id: itemDueDate
                 anchors.verticalCenter: parent.verticalCenter
 
-                Text {
-                    id: itemText
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: itemtext
-                }
-
-                Text {
-                    id: itemDueDate
-                    anchors.verticalCenter: parent.verticalCenter
-
-                    anchors.right: parent.right
-                    anchors.rightMargin: 20
-                    text: itemduedate
-                }
+                anchors.right: parent.right
+                anchors.rightMargin: 10
+                text: itemduedate
             }
         }
     }
