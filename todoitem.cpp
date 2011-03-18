@@ -4,6 +4,7 @@ ToDoItem::ToDoItem() {
 }
 
 ToDoItem::ToDoItem(QDate dueDate, QString text) {
+
     setText(text);
     setDueDate(dueDate);
 }
@@ -29,6 +30,7 @@ void ToDoItem::setDueDate(QDate newDueDate) {
 }
 
 void ToDoItem::writeXML(QXmlStreamWriter& xmlWriter) {
+
     xmlWriter.writeStartElement("Item");
     xmlWriter.writeTextElement("Text", this->text());
     xmlWriter.writeTextElement("DueDate", this->dueDate().toString());
