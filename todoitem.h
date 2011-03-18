@@ -3,6 +3,7 @@
 
 #include <QDeclarativeItem>
 #include <QDate>
+#include <QXmlStreamWriter>
 
 class ToDoItem
 {
@@ -15,6 +16,8 @@ public:
 
     QDate dueDate() const;
     void setDueDate(QDate newDueDate);
+
+    void writeXML(QXmlStreamWriter& );
 
 private:
      QString m_text;

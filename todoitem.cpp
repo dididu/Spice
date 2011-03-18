@@ -28,3 +28,10 @@ void ToDoItem::setDueDate(QDate newDueDate) {
     m_duedate = newDueDate;
 }
 
+void ToDoItem::writeXML(QXmlStreamWriter& xmlWriter) {
+    xmlWriter.writeStartElement("Item");
+    xmlWriter.writeTextElement("Text", this->text());
+    xmlWriter.writeTextElement("DueDate", this->dueDate().toString());
+    xmlWriter.writeEndElement();
+}
+

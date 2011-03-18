@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     model.addItem(ToDoItem(QDate(2011, 03, 18), "Polar bear"));
     model.addItem(ToDoItem(QDate(2011, 03, 19), "Quoll"));
 
+    model.writeXML("spice.xml");
     QmlApplicationViewer viewer;
 
     QDeclarativeContext *ctxt = viewer.rootContext();
@@ -29,4 +30,5 @@ int main(int argc, char *argv[])
     viewer.showExpanded();
 
     return app.exec();
+
 }

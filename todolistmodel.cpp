@@ -1,3 +1,5 @@
+#include <QFile>
+#include <QXmlStreamWriter>
 #include "todolistmodel.h"
 
 ToDoListModel::ToDoListModel(QObject *parent) :
@@ -31,4 +33,25 @@ QVariant ToDoListModel::data(const QModelIndex & index, int role) const {
         return item.dueDate().toString();
 
     return QVariant();
+}
+
+void ToDoListModel::writeXML(QString fileName) {
+
+    QFile file(fileName);
+    file.open(QIODevice::WriteOnly);
+
+    QXmlStreamWriter xmlWriter(&file);
+    xmlWriter.setAutoFormatting(true);
+    xmlWriter.writeStartDocument();
+    xmlWriter.writeStartElement("Spice");
+
+    ToDoItem item;
+    foreach(item, m_items) {
+        item.writeXML(xmlWriter);
+    }
+
+    xmlWriter.writeEndElement();
+    xmlWriter.writeEndDocument();
+
+    file.close();
 }
