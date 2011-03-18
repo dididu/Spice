@@ -23,8 +23,12 @@ public:
 
 
     void writeXML(QString fileName);
+    void readXML(QString fileName);
 
 private:
+
+    ToDoItem& parseItem(QXmlStreamReader& );
+
     QList<ToDoItem> m_items;
 
 signals:
