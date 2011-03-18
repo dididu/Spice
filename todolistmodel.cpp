@@ -5,6 +5,7 @@ ToDoListModel::ToDoListModel(QObject *parent) :
 {
     QHash<int, QByteArray> roles;
     roles[ItemTextRole] = "itemtext";
+    roles[ItemDueDateRole] = "itemduedate";
     setRoleNames(roles);
 }
 
@@ -26,7 +27,8 @@ QVariant ToDoListModel::data(const QModelIndex & index, int role) const {
     const ToDoItem &item = m_items[index.row()];
     if (role == ItemTextRole)
         return item.text();
-//    else if (role == SizeRole)
-//      return animal.size();
+    else if (role == ItemDueDateRole)
+        return item.dueDate().toString();
+
     return QVariant();
 }

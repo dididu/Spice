@@ -12,6 +12,7 @@ public:
 
     enum ItemRoles {
              ItemTextRole = Qt::UserRole + 1,
+             ItemDueDateRole
          };
 
     ToDoListModel(QObject *parent = 0);

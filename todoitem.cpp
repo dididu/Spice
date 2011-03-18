@@ -3,8 +3,9 @@
 ToDoItem::ToDoItem() {
 }
 
-ToDoItem::ToDoItem(QString text) {
+ToDoItem::ToDoItem(QDate dueDate, QString text) {
     setText(text);
+    setDueDate(dueDate);
 }
 
 QString ToDoItem::text() const {
@@ -16,3 +17,14 @@ void ToDoItem::setText(QString newText) {
 
     m_text = newText;
 }
+
+QDate ToDoItem::dueDate() const {
+
+    return m_duedate;
+}
+
+void ToDoItem::setDueDate(QDate newDueDate) {
+
+    m_duedate = newDueDate;
+}
+

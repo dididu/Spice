@@ -15,9 +15,9 @@ int main(int argc, char *argv[])
     //qmlRegisterType<ToDoItem>("Spice", 1, 0, "ToDoItem");
 
     ToDoListModel model;
-    model.addItem(ToDoItem("Wolf"));
-    model.addItem(ToDoItem("Polar bear"));
-    model.addItem(ToDoItem("Quoll"));
+    model.addItem(ToDoItem(QDate(2011, 03, 17), "Wolf"));
+    model.addItem(ToDoItem(QDate(2011, 03, 18), "Polar bear"));
+    model.addItem(ToDoItem(QDate(2011, 03, 19), "Quoll"));
 
     QmlApplicationViewer viewer;
 
