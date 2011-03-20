@@ -1,8 +1,11 @@
 import QtQuick 1.0
 
 ListView {
-    width: 200; height: 250
-    anchors.fill: parent
+    width: 300
+
+    height: 200
+
+
     model: ToDoModel
     spacing: 10
 

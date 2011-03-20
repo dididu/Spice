@@ -6,6 +6,13 @@ Rectangle {
 
     color: "gray"
 
-    ToDoListView{
+    Column {
+        spacing: 10
+        AddTaskField {
+
+        }
+
+        ToDoListView{
+        }
     }
 }
